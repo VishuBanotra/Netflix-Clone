@@ -78,7 +78,6 @@ function fetchMovieCategoryList(fetchUrl, categoryName) {
     .then((res) => res.json())
     .then((res) => {
       const movies = res.results;
-      console.log(res.results);
       if (Array.isArray(movies) && movies.length > 0) {
         buildMovieSection(movies, categoryName);
       }
@@ -89,7 +88,6 @@ function fetchMovieCategoryList(fetchUrl, categoryName) {
 
 // Building Movie Section with array of movies
 function buildMovieSection(movie, categoryName) {
-  // console.log(movie, categoryName)
   const movieContainer = document.getElementById("movies-cont");
   const movieListHTML = movie.map((item) => {
     return `
